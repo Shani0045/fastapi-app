@@ -3,7 +3,7 @@ from fastapi import APIRouter, Query, Depends
 from fastapi.responses import Response
 from sqlalchemy import text
 
-from app.config.db_config import  get_db
+from app.configs.db_config import  get_db
 
 from app.schemas.users_schema import Users
 from app.models.users_model import Employees

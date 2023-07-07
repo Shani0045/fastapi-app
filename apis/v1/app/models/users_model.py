@@ -1,6 +1,6 @@
 
 from sqlalchemy import *
-from app.config.db_config import Base
+from app.configs.db_config import Base
 
 class Employees(Base):
     __tablename__ = "employees"

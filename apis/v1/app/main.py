@@ -1,17 +1,18 @@
 
 from fastapi import FastAPI
+import os
 
 from app.routers import api_router
+from app.config import conf
  
-
 # main app start here
 
-DOCS_URL = "/test-apis" if 1 else None
-REDOC_URL = "/"  if 1 else None
+API_TITLE =  "Dispach Management System"
+API_VERSION = conf.API_VERSION
+DESCRIPTION = "dispach management system api version "+API_VERSION
 
-API_VERSION = '1.0 Beta' 
-API_TITLE =  "Users APIs"
-DESCRIPTION = "Users APIs"
+DOCS_URL = "/test-apis" if os.getenv("PYTHON_ENV") in ["dev", "development", "test"] else None
+REDOC_URL = "/"  if os.getenv("PYTHON_ENV") in ["dev", "development", "test"] else None
 
 app = FastAPI(
         title =API_TITLE,
