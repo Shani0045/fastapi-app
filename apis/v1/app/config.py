@@ -1,8 +1,12 @@
 
 from dotenv import load_dotenv
 import os
+from app.custom_exceptions.custom import EnvError
 
-load_dotenv(os.path.join(os.path.dirname("v1"),'.env'))
+env = load_dotenv(os.path.join(os.path.dirname("v1"),'.env'))
+
+if not env:
+    raise EnvError(".env file not found or not fully loaded...")
 
 class Config:
     """ write environment variables here"""
@@ -11,7 +15,6 @@ class Config:
     API_VERSION = os.getenv("API_VERSION")
 
 
-# Initialize config instance
+# Initialize config instances
 
 conf = Config()
-

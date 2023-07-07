@@ -4,10 +4,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import QueuePool
 from sqlalchemy.ext.declarative import declarative_base
 
-import os, dotenv
-
-dotenv.load_dotenv(os.path.join(os.path.dirname("v1"),'.env'))
-
 """"
 class DBConfig:
     def __init__(self, config=None):
@@ -15,7 +11,7 @@ class DBConfig:
         self.password = os.getenv("PG_PASSWORD")
         self.host = os.getenv("PG_HOST")
         # self.port = os.getenv("PG_PORT")
-        self.database = os.getenv("PG_DATABASE")
+        self.datsabase = os.getenv("PG_DATABASE")
 
         self.conn_string = f"postgresql://{self.user}:{self.password}@{self.host}/{self.database}"
 
@@ -43,7 +39,7 @@ class DBConfig:
 
 
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://postgres:engineer@localhost/demo"
+SQLALCHEMY_DATABASE_URL = f"postgresql://postgres:engineer@localhost/dms1"
 
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL, echo=False
