@@ -1,26 +1,36 @@
 folder architectures
 
 
-      apis/v1:
+      apis:
             config:
               - db_config.py
               - es_config.py
             app1:
-              routers:
-              - user_routes.py
-              - employees_routes.py
+              v1:
+                routers:
+                    - user_routes.py
+                    - employees_routes.py
         
-              services:
-               - users_services.py    # for business logic or database related logic app related helpers.
-               - employee_services.py
+                services:
+                     - users_services.py    # for business logic or database related logic app related helpers.
+                     - employee_services.py
+              v2:
+                routers:
+                    - user_routes.py
+                    - employees_routes.py
+        
+                services:
+                     - users_services.py    # for business logic or database related logic app related helpers.
+                     - employee_services.py
+            models:
+                app1:
+                  - user_models.py
+                  - employee_models.py
       
-               models:
-                 user_models.py
-                 employee_models.py
-      
-              schemas:
-                - user_schema.py
-                - employee_schema.py
+            schemas:
+                  app1
+                    - user_schema.py
+                    - employee_schema.py
       
             utils:
               global_helper.py  # like string manipulations and etc.
