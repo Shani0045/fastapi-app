@@ -22,12 +22,12 @@ folder architectures
                 services:
                      - users_services.py    # for business logic or database related logic app related helpers.
                      - employee_services.py
-            models:
+              models:
                 app1:
                   - user_models.py
                   - employee_models.py
       
-            schemas:
+              schemas:
                   app1
                     - user_schema.py
                     - employee_schema.py
